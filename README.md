@@ -6,13 +6,13 @@
 
 ---
 
-## 🗂 Overview
+## Overview
 
 This project investigates whether AI-powered development tools—so-called “TuringBots”—are poised to replace human software developers. By mining trends from the GitHub Archive (over 1.36 TiB of commits and repository data), we analyze shifts in programming language usage, license adoption, automation, and the real impact of AI tools on the software development landscape.
 
 ---
 
-## 📈 Key Findings
+## Key Findings
 
 - **AI-assisted coding is on the rise:** Automated commits are more frequent due to the rise of TuringBots and similar tools.
 - **Programming language trends:** Python dominates AI/ML, while JavaScript is the most broadly active language overall.
@@ -22,7 +22,7 @@ This project investigates whether AI-powered development tools—so-called “Tu
 
 ---
 
-## 📊 Data Sources & Methodology
+## Data Sources & Methodology
 
 ### Data Sources
 - **Primary:** GitHub Archive (Google Cloud Storage), over 1.36 TiB.
@@ -48,7 +48,7 @@ This project investigates whether AI-powered development tools—so-called “Tu
 
 ---
 
-## 🚀 Main Results
+## Main Results
 
 - **Popular Programming Languages:**  
   - By bytes: C; by repo count: JavaScript.
@@ -69,7 +69,7 @@ This project investigates whether AI-powered development tools—so-called “Tu
 
 ---
 
-## 💡 Conclusions & Recommendations
+## Conclusions & Recommendations
 
 - **TuringBots and AI tools will *not* fully replace human developers.** They automate repetitive tasks, but humans remain indispensable for creative problem-solving and architectural thinking.
 - **Actionable Steps:**
@@ -82,7 +82,7 @@ This project investigates whether AI-powered development tools—so-called “Tu
 
 ---
 
-## 🗃 Project Structure
+## Project Structure
 
 ```
 .
@@ -96,6 +96,6 @@ This project investigates whether AI-powered development tools—so-called “Tu
 
 ---
 
-## 📢 Acknowledgments
+## Acknowledgments
 
 Many thanks to open-source communities and researchers whose tools and data made this project possible.
