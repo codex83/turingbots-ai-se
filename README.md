@@ -1,101 +1,113 @@
 
-# Will TuringBots Replace Human Software Developers?  
+# Will TuringBots Replace Human Software Developers?
 *A Big Data Analysis of Trends in Open Source Coding, Automation, and AI*
 
 **By Hritik Jhaveri | Big Data and Cloud Computing**
 
 ---
 
-## Overview
+## 🗂️ Overview
 
 This project investigates whether AI-powered development tools—so-called “TuringBots”—are poised to replace human software developers. By mining trends from the GitHub Archive (over 1.36 TiB of commits and repository data), we analyze shifts in programming language usage, license adoption, automation, and the real impact of AI tools on the software development landscape.
 
 ---
 
-## Key Findings
+## 🚀 Main Results & Visualizations
 
-- **AI-assisted coding is on the rise:** Automated commits are more frequent due to the rise of TuringBots and similar tools.
-- **Programming language trends:** Python dominates AI/ML, while JavaScript is the most broadly active language overall.
-- **Humans remain essential:** While AI can automate repetitive tasks, human developers are still needed for high-level architecture, debugging, and innovation.
-- **Big Tech’s role:** Companies like Google and Linux exert significant influence through open-source contributions.
-- **Automation & repetition:** Many commits, especially in front-end projects, are repetitive or templated, underscoring dependence on frameworks, templates, and bots.
+The analysis of over 1.36 TiB of GitHub data reveals several key trends shaping the software development industry.
 
----
+#### 1. Programming Language Trends
+JavaScript remains the most popular language by repository count, highlighting the dominance of web technologies. However, by volume of code, C is the largest, indicating its foundational role in large-scale systems. Python has firmly established itself as the leader in the AI/ML space.
 
-## Data Sources & Methodology
+<p align="center">
+  <img src="visualizations/top_lang_repo.png" width="400" alt="Top Languages by Repo Count">
+  <img src="visualizations/top_lang_bytes.png" width="400" alt="Top Languages by Byte Count">
+</p>
+<p align="center">
+  <img src="visualizations/trend_top_lang_commits.png" width="600" alt="Language Trends Over Time">
+</p>
 
-### Data Sources
-- **Primary:** GitHub Archive (Google Cloud Storage), over 1.36 TiB.
-- **Data Includes:**  
-  - Commit metadata (authors, timestamps, messages)
-  - Programming language usage per repo
-  - Repo license info
-  - File metadata and actual file contents
+#### 2. The Rise of AI and Data Science
+The growth of AI and Data Science is explosive. "AI" is the most frequently mentioned technology keyword in commit messages, and Python's ecosystem of libraries (`numpy`, `tensorflow`, `pandas`) dominates this trend.
 
-### Data Preparation
-- Removed duplicate and incomplete records
-- Standardized text (e.g., commit messages)
-- Extensive cleaning: only well-populated, relevant fields retained
+<p align="center">
+  <img src="visualizations/top_ds_ai.png" width="400" alt="Top DS/AI Keywords">
+  <img src="visualizations/top_ds_ai_trend.png" width="400" alt="DS/AI Keyword Trends">
+</p>
 
-### Technologies Used
-- **Processing:** Apache Spark (large-scale data manipulation)
-- **EDA/Visualizations:** Python (Matplotlib, Pandas)
+#### 3. Automation and Developer Workflows
+Commit patterns reveal a standard Monday-Friday work week, with activity peaking mid-week. Automation is a significant factor, with bots and CI/CD systems ranking among the top committers. This, along with the high frequency of templated commit messages, points to the increasing role of automation in the development lifecycle.
 
-### Analytical Methods
-- **Exploratory Data Analysis (EDA):** Examined key variables and distributions
-- **Temporal Analysis:** Trends in code commits, languages, and AI associations over time
-- **Text Analysis:** Checked for commit message uniqueness and frequency of automation (bots vs humans)
+<p align="center">
+  <img src="visualizations/EDA_commits_by_dow.png" width="400" alt="Commits by Day of Week">
+  <img src="visualizations/freq_commit_reason.png" width="400" alt="Commit Message Keywords">
+</p>
 
 ---
 
-## Main Results
+## 💡 Conclusion
 
-- **Popular Programming Languages:**  
-  - By bytes: C; by repo count: JavaScript.
-  - Post-2010s: JavaScript and HTML uproar due to mobile/web/cloud boom.
-  - Python is the clear leader in AI/ML work.
-
-- **Open Source Licenses:**  
-  - MIT is the most widely-used license.
-  - GPL-3.0 gathers the widest spread of programming languages.
-
-- **AI/Data Science in Practice:**  
-  - Most associated keywords: `numpy`, `tensorflow`, `pandas`.
-  - Python-centric tools dominate, reflecting broader trends in DS/AI.
-
-- **Bot Automation & Commit Patterns:**  
-  - Automated accounts (e.g., GitHub bots, CI/CD agents) are now among the top committers.
-  - Commit messages in front-end (JS/HTML) projects especially repetitive; Python sees more unique message content.
+**TuringBots and AI tools will *augment*, not replace, human developers.** They excel at automating repetitive tasks, but humans remain indispensable for creative problem-solving, architectural design, and innovation. The future of software engineering is a collaborative one, where AI handles the rote work, and humans lead on complex and strategic decisions.
 
 ---
 
-## Conclusions & Recommendations
+## 🗃️ Project Structure
 
-- **TuringBots and AI tools will *not* fully replace human developers.** They automate repetitive tasks, but humans remain indispensable for creative problem-solving and architectural thinking.
-- **Actionable Steps:**
-  - Adopt AI coding tools to maximize efficiency—especially for routine coding tasks.
-  - Invest in upskilling teams to work seamlessly with AI.
-  - Closely monitor which development tasks can be reliably automated, without sacrificing software quality.
-  - Contribute to open-source AI initiatives and use Python for ML projects.
-- **Future Outlook:**  
-  Collaboration will define future software engineering: AI handles the rote work; humans lead on innovation and complex decisions.
-
----
-
-## Project Structure
+The repository is organized to separate the data analysis notebooks from the visual outputs.
 
 ```
 .
-├── data_preprocessing/     # Data cleaning scripts (Spark, Python)
-├── analysis/               # EDA, Text/Temporal analysis
-├── visualizations/         # Charts/plots showing trends (Matplotlib, Pandas)
-├── results/                # Summaries, tables, and extracted insights
+├── notebooks/              # Jupyter notebooks for data analysis.
+│   ├── 1_Languages.ipynb
+│   ├── 2_Commits.ipynb
+│   └── ...
+├── visualizations/         # Plots and charts generated by the notebooks.
+│   ├── top_lang_repo.png
+│   └── ...
+├── .gitignore
+├── LICENSE
 ├── README.md
-└── Final-Presentation-Hritik-Jhaveri.pptx
+└── requirements.txt
 ```
 
 ---
 
-## Acknowledgments
+## 🏃‍♂️ How to Run the Analysis
 
-Many thanks to open-source communities and researchers whose tools and data made this project possible.
+To reproduce the analysis in this project, please follow these steps:
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/codex83/turingbots-ai-se.git
+cd turingbots-ai-se
+```
+
+#### 2. Set Up the Environment
+It is recommended to use a virtual environment.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+#### 3. Data Access
+This project runs on a 1.36 TiB dataset from the GitHub Archive, which is stored on Google Cloud Storage (GCS). The path to this dataset is hardcoded in the notebooks (`gs://msca-bdp-data-open/final_project_git`).
+
+To run the notebooks, you will need:
+-   An environment with access to Google Cloud Storage.
+-   An Apache Spark cluster (like Google Cloud Dataproc) to handle the large-scale data processing.
+
+#### 4. Execute the Notebooks
+The analysis is split across several Jupyter notebooks in the `notebooks/` directory. It is recommended to run them in numerical order, as they follow the logical flow of the analysis:
+1.  `1_Languages.ipynb`: Analyzes language popularity and trends.
+2.  `2_Commits.ipynb`: Analyzes commit patterns, seasonality, and keyword trends.
+3.  ... and so on.
+
+---
+
+## 🛠️ Technologies Used
+-   **Data Processing:** Apache Spark
+-   **Data Analysis:** Python, Pandas, NumPy
+-   **Visualization:** Matplotlib, Seaborn
+-   **Platform:** Google Cloud Platform (GCP), Dataproc
+
